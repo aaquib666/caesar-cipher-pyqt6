@@ -8,7 +8,7 @@ from PyQt6.QtGui import QClipboard
 from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QPalette
 
-# Function to handle Caesar cipher
+# Functions to handle Caesar cipher
 def caesar_cipher(text, shift, decrypt=False):
     result = ""
     if decrypt:
@@ -26,7 +26,7 @@ def caesar_cipher(text, shift, decrypt=False):
     return result
 
 
-# Main Window
+# The Main Window
 class CaesarCipherApp(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -34,7 +34,7 @@ class CaesarCipherApp(QMainWindow):
         self.setWindowTitle("Caesar Cipher GUI")
         self.setGeometry(200, 200, 600, 400)
 
-        self.is_dark_mode = self.detect_system_theme()  # Start with system theme
+        self.is_dark_mode = self.detect_system_theme()  # To start with system theme
         self.initUI()
 
     def detect_system_theme(self):
@@ -43,7 +43,7 @@ class CaesarCipherApp(QMainWindow):
         return system_theme < 128  # If the lightness is low, it's dark mode; otherwise, it's light mode.
 
     def initUI(self):
-        # Define Font
+        # Defining our font
         self.font = QFont("Sans-serif", 10)
 
         # Widgets
@@ -82,7 +82,7 @@ class CaesarCipherApp(QMainWindow):
         self.toggle_button.setFont(self.font)
         self.toggle_button.clicked.connect(self.toggle_dark_mode)
 
-        # Apply initial stylesheets
+        # Applying initial stylesheets
         self.apply_stylesheets()
 
         # Layouts
@@ -225,11 +225,11 @@ class CaesarCipherApp(QMainWindow):
             QMessageBox.warning(self, "Operation Error", "Invalid operation selected.")
             return
 
-        # Display the result
+        # Displays the result
         self.output_text.setPlainText(result)
 
     def copy_to_clipboard(self):
-        # Copy output text to clipboard
+        # Copies output text to clipboard
         clipboard = QApplication.clipboard()
         result = self.output_text.toPlainText()
         if result.strip():
@@ -243,7 +243,7 @@ class CaesarCipherApp(QMainWindow):
         self.apply_stylesheets()
 
 
-# Run the application
+# Runs the application
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     main_window = CaesarCipherApp()
