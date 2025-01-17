@@ -17,3 +17,6 @@ A GUI-based Caesar Cipher encryption and decryption tool built with PyQt6.
 Below is a screenshot of the Caesar Cipher Tool GUI:
 
 ![Caesar Cipher GUI](caesar_cipher_gui.png)
+
+## License
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
